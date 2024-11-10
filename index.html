@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Career Guidance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Local Career Guidance</h1>
+        <p>Get career advice based on the job market in your area.</p>
+    </header>
+
+    <main>
+        <section id="location-input">
+            <label for="location">Enter your location:</label>
+            <input type="text" id="location" placeholder="City or postal code">
+            <button onclick="getRecommendations()">Get Recommendations</button>
+        </section>
+
+        <section id="career-paths">
+            <h2>Recommended Career Paths</h2>
+            <ul id="career-list"></ul>
+        </section>
+
+        <section id="job-vacancies">
+            <h2>Job Vacancies</h2>
+            <ul id="job-list"></ul>
+        </section>
+
+        <section id="skills-forecast">
+            <h2>Skills Forecast</h2>
+            <ul id="skills-list"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
