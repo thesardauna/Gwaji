@@ -3,38 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Career Guidance</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Music Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Music Recommendation System</h1>
+        <form id="recommendation-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
 
-    <header>
-        <h1>Local Career Guidance</h1>
-        <p>Get career advice based on the job market in your area.</p>
-    </header>
+            <label for="school">School:</label>
+            <input type="text" id="school" placeholder="Enter your school" required>
 
-    <main>
-        <section id="location-input">
-            <label for="location">Enter your location:</label>
-            <input type="text" id="location" placeholder="City or postal code">
-            <button onclick="getRecommendations()">Get Recommendations</button>
-        </section>
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
 
-        <section id="career-paths">
-            <h2>Recommended Career Paths</h2>
-            <ul id="career-list"></ul>
-        </section>
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+            </select>
 
-        <section id="job-vacancies">
-            <h2>Job Vacancies</h2>
-            <ul id="job-list"></ul>
-        </section>
-
-        <section id="skills-forecast">
-            <h2>Skills Forecast</h2>
-            <ul id="skills-list"></ul>
-        </section>
-    </main>
+            <button type="submit">Get Recommendation</button>
+        </form>
+        <div id="result"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
