@@ -1,26 +1,23 @@
-function getRecommendations() {
-    const location = document.getElementById("location").value;
-    fetch(`http://localhost:5000/recommendations?location=${location}`)
-        .then(response => response.json())
-        .then(data => {
-            displayCareerPaths(data.careerPaths);
-            displayJobVacancies(data.jobVacancies);
-            displaySkillsForecast(data.skillsForecast);
-        })
-        .catch(error => console.error("Error fetching recommendations:", error));
-}
+document.getElementById('recommendation-form').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-function displayCareerPaths(careers) {
-    const careerList = document.getElementById("career-list");
-    careerList.innerHTML = careers.map(career => `<li>${career}</li>`).join("");
-}
+    // Get form values
+    const name = document.getElementById('name').value;
+    const school = document.getElementById('school').value;
+    const age = parseInt(document.getElementById('age').value);
+    const gender = parseInt(document.getElementById('gender').value);
 
-function displayJobVacancies(jobs) {
-    const jobList = document.getElementById("job-list");
-    jobList.innerHTML = jobs.map(job => `<li>${job.title} at ${job.company}</li>`).join("");
-}
+    // Music recommendation logic (Simple Decision Tree)
+    let genre;
+    if (age <= 20) {
+        genre = gender === 1 ? 'HipHop' : 'Pop';
+    } else if (age <= 30) {
+        genre = gender === 1 ? 'Jazz' : 'Classical';
+    } else {
+        genre = 'Rock';
+    }
 
-function displaySkillsForecast(skills) {
-    const skillsList = document.getElementById("skills-list");
-    skillsList.innerHTML = skills.map(skill => `<li>${skill}</li>`).join("");
-}
+    // Display the result
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerText = `Hello ${name} from ${school}, we recommend: ${genre}`;
+});
